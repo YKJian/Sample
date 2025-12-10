@@ -6,8 +6,8 @@ namespace Players
     public class NavMeshMouseResolver : MonoBehaviour
     {
         [SerializeField] private LayerMask m_layerMask = ~0;
-        [SerializeField] [Min(0)] private float m_raycastDistance = 1000f;
-        [SerializeField] [Min(0)] private float m_navMeshSampleMaxDistance = 100f;
+        [SerializeField][Min(0)] private float m_raycastDistance = 1000f;
+        [SerializeField][Min(0)] private float m_navMeshSampleMaxDistance = 100f;
         
         private Camera m_camera;
 

@@ -6,7 +6,7 @@ namespace Cameras
     {
         [SerializeField] private Transform m_target;
         [SerializeField] private Vector3 m_offset = new Vector3(0, 15, -10);
-        [SerializeField] [Range(0.001f, 1f)] private float m_smoothTime = 0.15f;
+        [SerializeField][Range(0.001f, 1f)] private float m_smoothTime = 0.15f;
 
         private Vector3 m_velocity;
 
