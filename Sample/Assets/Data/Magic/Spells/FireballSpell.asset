@@ -17,6 +17,7 @@ MonoBehaviour:
   m_combination: 00000000
   m_effects:
   - rid: 5751289422910062885
+  - rid: 5751289422910062895
   m_speed: 25
   references:
     version: 2
@@ -25,3 +26,6 @@ MonoBehaviour:
       type: {class: AttackEffect, ns: Magic.Effects, asm: Assembly-CSharp}
       data:
         m_damage: 25
+    - rid: 5751289422910062895
+      type: {class: HealEffect, ns: Magic.Effects, asm: Assembly-CSharp}
+      data: 
