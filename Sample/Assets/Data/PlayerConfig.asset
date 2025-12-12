@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56d9a0500b49cd34f9603c33225c6121, type: 3}
   m_Name: PlayerConfig
   m_EditorClassIdentifier: Assembly-CSharp::Players.PlayerConfig
+  m_cursorTexture: {fileID: 2800000, guid: a9c897dbcc6a1c84a90727a9487440ef, type: 3}
   m_speed: 5
+  m_angularSpeed: 500
