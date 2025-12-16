@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Magic.Elements
 {
+    [CreateAssetMenu(fileName = "MagicConfig", menuName = "Xlab/Magic/Elements/Magic Config")]
     public sealed class MagicConfig : ScriptableObject
     {
         [SerializeField] private ElementsData m_elementsData;
