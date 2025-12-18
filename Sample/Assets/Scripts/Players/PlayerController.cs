@@ -9,7 +9,7 @@ namespace Players
     {
         [SerializeField] private PlayerConfig m_config;
         [SerializeField] private PlayerMovement m_playerMovement;
-        [SerializeField] private MouseResolver m_navMeshMouseResolver;
+        [SerializeField] private MouseResolver m_mouseResolver;
         [SerializeField] private MagicInputHelper m_magicInputHelper;
 
         private PlayerRotationCalculator m_playerRotationCalculator;
@@ -21,9 +21,9 @@ namespace Players
                 m_playerMovement = GetComponent<PlayerMovement>();
             }
 
-            if (!m_navMeshMouseResolver)
+            if (!m_mouseResolver)
             {
-                m_navMeshMouseResolver = GetComponent<MouseResolver>();
+                m_mouseResolver = GetComponent<MouseResolver>();
             }
         }
 
@@ -45,7 +45,7 @@ namespace Players
 
             if (Mouse.current.rightButton.wasPressedThisFrame)
             {
-                Vector3? navPoint = m_navMeshMouseResolver.GetNavMeshPoint();
+                Vector3? navPoint = m_mouseResolver.GetNavMeshPoint();
 
                 if (navPoint.HasValue)
                 {

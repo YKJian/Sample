@@ -28,7 +28,7 @@ namespace Magic.Systems
             else
             {
                 m_elements.Add(elementType);
-                ElementsChanged.Invoke(m_elements);
+                ElementsChanged?.Invoke(m_elements);
             }
         }
 
@@ -73,7 +73,8 @@ namespace Magic.Systems
         public void Clear()
         {
             m_elements.Clear();
-            // TODO Invoke
+
+            ElementsChanged?.Invoke(m_elements);
         }
     }
 }

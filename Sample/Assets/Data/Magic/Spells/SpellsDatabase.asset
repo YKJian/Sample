@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Magic.Spells.Data.SpellsDatabase
   m_spells:
   - {fileID: 11400000, guid: 487a1f1528d06d64796ee240631c4379, type: 2}
+  - {fileID: 11400000, guid: ea381eba9cddebe429e7651366684b3c, type: 2}
+  - {fileID: 11400000, guid: aec47cf0543b06446a5ee14acfb72e9b, type: 2}

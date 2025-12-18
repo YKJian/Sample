@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Magic.Spells.Data;
 
 namespace Magic.Systems
 {
@@ -12,7 +13,7 @@ namespace Magic.Systems
         public event Action<MagicState> StateChanged;
         public event Action SpellCancelled;
 
-        public event Action<IReadOnlyList<ElementType>> ElementChanged
+        public event Action<IReadOnlyList<ElementType>> ElementsChanged
         {
             add => spellPreparation.ElementsChanged += value;
             remove => spellPreparation.ElementsChanged -= value;
@@ -78,7 +79,8 @@ namespace Magic.Systems
             {
                 state = MagicState.Casting;
 
-                m_caster.Cast(spell, m_mouseResolver.m_mousePosition);
+                // m_caster.Cast(spell, m_mouseResolver.m_mousePosition);
+                m_caster.Cast(spell, m_mouseResolver.GetCursorWorldPosition() ?? Vector3.zero);
 
                 spellPreparation.Clear();
                 state = MagicState.Idle;

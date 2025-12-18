@@ -1,7 +1,7 @@
-using Magic.Spells.Data;
+using Magic.Elements;
 using UnityEngine;
 
-namespace Magic.Elements
+namespace Magic.Spells.Data
 {
     [CreateAssetMenu(fileName = "MagicConfig", menuName = "Xlab/Magic/Elements/Magic Config")]
     public sealed class MagicConfig : ScriptableObject

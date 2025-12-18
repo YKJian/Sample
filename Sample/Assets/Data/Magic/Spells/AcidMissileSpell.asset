@@ -10,23 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d4a24e6d2fc5a446a20eb724028a755, type: 3}
-  m_Name: FireballSpell
+  m_Name: AcidMissileSpell
   m_EditorClassIdentifier: Assembly-CSharp::Magic.Spells.Data.TargetSpellData
-  m_spellName: Fireball
-  m_visualEffect: {fileID: 1587250918974726, guid: e9e9458c34ca3044d87b5f69ebf36957, type: 3}
-  m_combination: 00000000
+  m_spellName: AcidMissile
+  m_visualEffect: {fileID: 1587250918974726, guid: 53b66ac397559ec41b8420b91f80e398, type: 3}
+  m_combination: 01000000
   m_effects:
-  - rid: 5751289422910062885
-  - rid: 5751289422910062895
-  m_speed: 25
+  - rid: 2880084271329968190
+  m_speed: 35
   references:
     version: 2
     RefIds:
-    - rid: 5751289422910062885
+    - rid: 2880084271329968190
       type: {class: AttackEffect, ns: Magic.Effects, asm: Assembly-CSharp}
       data:
-        m_damage: 25
-    - rid: 5751289422910062895
-      type: {class: HealEffect, ns: Magic.Effects, asm: Assembly-CSharp}
-      data:
-        m_heal: 0
+        m_damage: 0
