@@ -24,4 +24,4 @@ MonoBehaviour:
     - rid: 2880084271329968368
       type: {class: AttackEffect, ns: Magic.Effects, asm: Assembly-CSharp}
       data:
-        m_damage: 0
+        m_damage: 50
