@@ -322,7 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Players.PlayerController
   m_config: {fileID: 11400000, guid: 989191dd944b5c54d9e8fca1608a7a1e, type: 2}
   m_playerMovement: {fileID: 8043882394595070503}
-  m_navMeshMouseResolver: {fileID: 0}
+  m_mouseResolver: {fileID: 0}
   m_magicInputHelper:
     m_magicSystem: {fileID: 7618980531575658573}
     m_element1Key: 31
@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 6764603009262821766}
   - component: {fileID: 870187879373987956}
   - component: {fileID: 6180037254714316300}
+  - component: {fileID: 7374928439574639640}
   m_Layer: 5
   m_Name: PlayerCanvas
   m_TagString: Untagged
@@ -445,6 +446,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7374928439574639640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9196539306990802580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115dc9eafee446647a855149fd327e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Utils.FixedRotation
 --- !u!1001 &3826917563750187526
 PrefabInstance:
   m_ObjectHideFlags: 0

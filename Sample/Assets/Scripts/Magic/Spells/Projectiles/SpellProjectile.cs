@@ -1,4 +1,5 @@
 using Magic.Effects;
+using Players;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -52,6 +53,8 @@ namespace Magic.Spells.Projectiles
         {
             if (!m_initialized) return;
 
+            if (other.GetComponent<PlayerController>()) return;
+
             if (other.TryGetComponent<IEffectable>(out var effectable))
                 ApplyEffects(effectable);
 
@@ -61,7 +64,7 @@ namespace Magic.Spells.Projectiles
         public void Initialize(Vector3 targetPosition, float speed, IReadOnlyList<IEffect> effects)
         {
             m_targetPosition = targetPosition;
-            // m_targetPosition.y = transform.position.y;
+            m_targetPosition.y = transform.position.y;
 
             m_speed = speed;
             m_effects = effects;
