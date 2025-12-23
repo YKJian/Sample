@@ -15,9 +15,8 @@ namespace Entities
         public float value
         {
             get => m_value;
-            /*private */set
+            set
             {
-                // to not loose precision while comparing
                 if (Mathf.Approximately(m_value, value))
                 {
                     return;
@@ -40,7 +39,6 @@ namespace Entities
                 throw new InvalidOperationException("Health component is already initialized");
             }
 
-            // refer to field, not property
             m_value = value;
             m_initialized = true;
         }

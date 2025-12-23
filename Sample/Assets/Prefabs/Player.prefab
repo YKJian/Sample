@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6862783061852543417}
   - component: {fileID: 7914787889426153967}
+  - component: {fileID: 6979799856950484121}
   m_Layer: 5
   m_Name: PreparationView
   m_TagString: Untagged
@@ -56,7 +57,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -65,6 +66,27 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &6979799856950484121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442993219665696797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e00e111545ea84468e7b670e73c8a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Magic.Views.PreparationSpellView
+  m_magicSystem: {fileID: 7618980531575658573}
+  m_config: {fileID: 11400000, guid: 2f57b36c48a03154b81f5c250990ad59, type: 2}
+  m_elementsContainer: {fileID: 6862783061852543417}
+  m_icons:
+  - {fileID: 2125880626190700770}
+  - {fileID: 6446940697848671642}
+  - {fileID: 1717976936853492039}
+  m_shakeIntensity: 20
+  m_shakeDuration: 1
 --- !u!1 &3932297319078178783
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,6 +577,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f27393d3feef0c4a81f04558e4a8a40, type: 3}
+--- !u!114 &2125880626190700770 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2926024832396284644, guid: 4f27393d3feef0c4a81f04558e4a8a40, type: 3}
+  m_PrefabInstance: {fileID: 3826917563750187526}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!224 &2895707210800218396 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2104429393345528602, guid: 4f27393d3feef0c4a81f04558e4a8a40, type: 3}
@@ -657,6 +690,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f27393d3feef0c4a81f04558e4a8a40, type: 3}
+--- !u!114 &1717976936853492039 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2926024832396284644, guid: 4f27393d3feef0c4a81f04558e4a8a40, type: 3}
+  m_PrefabInstance: {fileID: 4561072195094479779}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!224 &2483807336033206457 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2104429393345528602, guid: 4f27393d3feef0c4a81f04558e4a8a40, type: 3}
@@ -759,6 +803,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f27393d3feef0c4a81f04558e4a8a40, type: 3}
+--- !u!114 &6446940697848671642 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2926024832396284644, guid: 4f27393d3feef0c4a81f04558e4a8a40, type: 3}
+  m_PrefabInstance: {fileID: 8206533226680074110}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!224 &7842764899053010020 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2104429393345528602, guid: 4f27393d3feef0c4a81f04558e4a8a40, type: 3}

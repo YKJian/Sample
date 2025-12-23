@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Markers
 {
-    [RequireComponent (typeof (LineRenderer))]
+    [RequireComponent (typeof(LineRenderer))]
     public class AimLineMarker : MonoBehaviour
     {
         [Header("Components")]
@@ -12,7 +12,7 @@ namespace Markers
         [SerializeField] private MouseResolver m_mouseResolver;
 
         [Header("Settings")]
-        [SerializeField] [Min(0)] private float m_z0Offset = 0.5f;
+        [SerializeField] [Min(0)] private float m_zOffset = 0.5f;
         [SerializeField] [Min(0)] private float m_lineWidth = 0.1f;
         [SerializeField] [Min(0)] private float m_disableDistance = 1f;
 
@@ -33,7 +33,18 @@ namespace Markers
 
         private void LateUpdate()
         {
-            // m_lineRenderer.SetPosition(index: 0, start);
+            var playerPos = m_playerTransform.position;
+            var end = GetAimPosition();
+
+            var direction = (end - playerPos).normalized;
+            var start = playerPos + direction * m_zOffset;
+
+            start.y = playerPos.y;
+            end.y = playerPos.y;
+
+            m_lineRenderer.SetPosition(index: 0, start);
+            m_lineRenderer.SetPosition(index: 1, end);
+            m_lineRenderer.enabled = Vector3.Distance(start, end) > m_disableDistance;
         }
 
         private Vector3 GetAimPosition()

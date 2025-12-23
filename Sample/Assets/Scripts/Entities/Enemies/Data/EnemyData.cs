@@ -5,10 +5,6 @@ namespace Entities.Enemies.Data
     [CreateAssetMenu(fileName = "EnemyData", menuName = "Xlab/Enemies/Enemy")]
     public class EnemyData : ScriptableObject
     {
-        // check that
-        // we refer to generated field - <Speed>K_Background...
-        // [field: SerializeField]
-        // 
         [SerializeField] private AttackEnemyType m_enemyType;
 
         [Header("Parameters")]

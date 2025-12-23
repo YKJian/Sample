@@ -16,7 +16,6 @@ namespace Utils
             m_worldOffset = transform.position - m_parent.position;
         }
 
-        // after all the logic, we update graphics
         private void LateUpdate()
         {
             if (!m_parent)

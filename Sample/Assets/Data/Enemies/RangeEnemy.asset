@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Enemies.Data.EnemyData
   m_enemyType: 0
   m_health: 75
-  m_speed: 0
-  m_attackTime: 0
-  m_attackRange: 0
+  m_speed: 10
+  m_attackTime: 2
+  m_attackRange: 5

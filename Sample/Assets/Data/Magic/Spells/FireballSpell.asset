@@ -18,7 +18,7 @@ MonoBehaviour:
   m_effects:
   - rid: 5751289422910062885
   - rid: 5751289422910062895
-  m_speed: 25
+  m_speed: 15
   references:
     version: 2
     RefIds:

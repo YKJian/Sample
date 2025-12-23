@@ -79,7 +79,6 @@ namespace Magic.Systems
             {
                 state = MagicState.Casting;
 
-                // m_caster.Cast(spell, m_mouseResolver.m_mousePosition);
                 m_caster.Cast(spell, m_mouseResolver.GetCursorWorldPosition() ?? Vector3.zero);
 
                 spellPreparation.Clear();
