@@ -15,7 +15,7 @@ namespace Entities
         public float value
         {
             get => m_value;
-            private set
+            /*private */set
             {
                 // to not loose precision while comparing
                 if (Mathf.Approximately(m_value, value))
