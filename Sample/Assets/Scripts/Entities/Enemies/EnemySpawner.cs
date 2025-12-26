@@ -7,8 +7,14 @@ namespace Entities.Enemies
     {
         [SerializeField] private EnemyData[] m_data;
         [SerializeField] private Enemy[] m_enemies;
-
         [SerializeField] private Transform[] m_spawnPoints;
+        [SerializeField] private Transform m_playerTransform;
+
+        // TODO Remove
+        private void Start()
+        {
+            Spawn();
+        }
 
         public void Spawn()
         {
@@ -18,7 +24,7 @@ namespace Entities.Enemies
                 var enemyData = GetEnemyData();
 
                 var enemyInstance = Instantiate(enemy, spawnPoint);
-                enemyInstance.Initialize(enemyData);
+                enemyInstance.Initialize(enemyData, m_playerTransform);
 
                 enemyInstance.Died += OnDied;
             }
@@ -26,6 +32,7 @@ namespace Entities.Enemies
 
         private void OnDied(Enemy enemy)
         {
+            enemy.Died -= OnDied;
             Destroy(enemy.gameObject);
         }
 

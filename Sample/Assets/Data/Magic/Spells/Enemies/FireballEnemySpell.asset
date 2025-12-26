@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4a24e6d2fc5a446a20eb724028a755, type: 3}
+  m_Name: FireballEnemySpell
+  m_EditorClassIdentifier: Assembly-CSharp::Magic.Spells.Data.TargetSpellData
+  m_spellName: FireballEnemy
+  m_visualEffect: {fileID: 1587250918974726, guid: a0fbc3331c879eb408b22e83f39d57fb, type: 3}
+  m_combination: 
+  m_effects:
+  - rid: 5751289740089622599
+  m_speed: 10
+  references:
+    version: 2
+    RefIds:
+    - rid: 5751289740089622599
+      type: {class: AttackEffect, ns: Magic.Effects, asm: Assembly-CSharp}
+      data:
+        m_damage: 25

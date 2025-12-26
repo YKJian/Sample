@@ -4,6 +4,7 @@ using Magic.Spells.Data;
 using Magic.Spells.Projectiles;
 using System;
 using UnityEngine;
+using UnityEngine.VFX;
 using Object = UnityEngine.Object;
 
 namespace Magic.Systems
@@ -48,7 +49,8 @@ namespace Magic.Systems
         {
             if (selfSpell.visualEffect)
             {
-                Object.Instantiate(selfSpell.visualEffect, m_casterTransform.position, Quaternion.identity);
+                var visualEffect = Object.Instantiate(selfSpell.visualEffect, m_casterTransform.position, Quaternion.identity);
+                SetLayer(visualEffect);
             }
 
             if (m_casterTransform.TryGetComponent<IEffectable>(out var effectable))
@@ -68,6 +70,7 @@ namespace Magic.Systems
             }
 
             var projectile = Object.Instantiate(targetSpell.visualEffect, m_casterTransform.position, Quaternion.identity);
+            SetLayer(projectile);
 
             var spellProjectile =
                 projectile.GetComponent<ISpellProjectile>() ??
@@ -86,6 +89,7 @@ namespace Magic.Systems
             var aoe = aoeSpell.visualEffect
                 ? Object.Instantiate(aoeSpell.visualEffect, m_casterTransform.position, Quaternion.identity)
                 : new GameObject();
+            SetLayer(aoe);
 
             aoe.transform.position = worldPosition;
 
@@ -94,6 +98,11 @@ namespace Magic.Systems
                 aoe.AddComponent<SpellAoe>();
 
             spellAoe.Initialize(worldPosition, aoeSpell.radius, aoeSpell.effects);
+        }
+
+        private void SetLayer(GameObject visualEffect)
+        {
+            visualEffect.layer = m_casterTransform.gameObject.layer;
         }
     }
 }
