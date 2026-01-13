@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f302765bd277deb4ba468a40e6ffe277, type: 3}
+  m_Name: static_enemy_ranged_01
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.Enemies.Data.EnemyData
+  m_enemyType: 0
+  m_health: 100
+  m_speed: 0
+  m_spell: {fileID: 11400000, guid: 3a6f48c8182c017409fffb905636de5e, type: 2}
+  m_attackTime: 2
+  m_attackRange: 10

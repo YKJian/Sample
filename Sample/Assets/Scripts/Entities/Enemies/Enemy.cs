@@ -1,10 +1,7 @@
 ﻿using Entities.Enemies.Data;
 using Entities.Enemies.Systems;
 using System;
-using System.Data.SqlTypes;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.CullingGroup;
 
 namespace Entities.Enemies
 {
@@ -14,6 +11,7 @@ namespace Entities.Enemies
 
         [SerializeField] private EnemyAttack m_attack;
         [SerializeField] private HealthComponent m_health;
+        [SerializeField] private EnemyMovement m_movement;
 
         private EnemyData m_data;
         private EnemyStateMachine m_stateMachine;
@@ -54,10 +52,16 @@ namespace Entities.Enemies
         {
             m_data = data;
             m_health.Initialize(data.health);
+            m_movement.Initialize(data.speed, playerTransform);
             m_attack.Initialize(playerTransform, data.spell, data.attackTime);
 
             m_playerTransform = playerTransform;
             m_stateMachine ??= new EnemyStateMachine();
+
+            if (data.enemyType == AttackEnemyType.Melee)
+            {
+                m_stateMachine.ChangeState(EnemyState.Move);
+            }
         }
 
         private void UpdateState()
@@ -67,7 +71,7 @@ namespace Entities.Enemies
             switch (m_stateMachine.currentState)
             {
                 case EnemyState.Idle: HandleIdleState(isInAttackRange); break;
-                // case EnemyState.Move: HandleMoveState(isInAttackRange); break;
+                case EnemyState.Move: HandleMoveState(isInAttackRange); break;
                 case EnemyState.Attack: HandleAttackState(isInAttackRange); break;
             }
         }
@@ -75,6 +79,14 @@ namespace Entities.Enemies
         private void HandleIdleState(bool isInAttackRange)
         {
             if (m_data.enemyType == AttackEnemyType.Range && isInAttackRange)
+            {
+                m_stateMachine.ChangeState(EnemyState.Attack);
+            }
+        }
+
+        private void HandleMoveState(bool isInAttackRange)
+        {
+            if (isInAttackRange)
             {
                 m_stateMachine.ChangeState(EnemyState.Attack);
             }
@@ -111,9 +123,17 @@ namespace Entities.Enemies
         private void OnDied() =>
             Died?.Invoke(this);
 
-        private void OnStateChanged(EnemyState state1, EnemyState state2)
+        private void OnStateChanged(EnemyState previousState, EnemyState nextState)
         {
-            // TODO Add movement
+            if (previousState is EnemyState.Move)
+            {
+                m_movement.StopMoving();
+            }
+
+            if (nextState is EnemyState.Move)
+            {
+                m_movement.StartMoving();
+            }
         }
     }
 }

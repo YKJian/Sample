@@ -9,19 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d4a24e6d2fc5a446a20eb724028a755, type: 3}
-  m_Name: FireballEnemySpell
-  m_EditorClassIdentifier: Assembly-CSharp::Magic.Spells.Data.TargetSpellData
-  m_spellName: Enemy Fireball
-  m_visualEffect: {fileID: 1587250918974726, guid: a0fbc3331c879eb408b22e83f39d57fb, type: 3}
-  m_combination: 
+  m_Script: {fileID: 11500000, guid: d141e4d160397d64897f8c2a5eb2cc93, type: 3}
+  m_Name: StonerSpell
+  m_EditorClassIdentifier: Assembly-CSharp::Magic.Spells.Data.AoeSpellData
+  m_spellName: Stoner
+  m_visualEffect: {fileID: 6069867861661976868, guid: fab6cc22215ddd944af132f0d4d80c47, type: 3}
+  m_combination: 0300000003000000
   m_effects:
-  - rid: 5751289740089622599
-  m_speed: 10
+  - rid: 9142120633905709056
+  m_isTarget: 1
+  m_radius: 5
   references:
     version: 2
     RefIds:
-    - rid: 5751289740089622599
+    - rid: 9142120633905709056
       type: {class: AttackEffect, ns: Magic.Effects, asm: Assembly-CSharp}
       data:
         m_damage: 25

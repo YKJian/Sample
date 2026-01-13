@@ -1457,6 +1457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Enemies.EnemySpawner
   m_data:
   - {fileID: 11400000, guid: bb335b0a1d5195c4c93cf425dbb35dea, type: 2}
+  - {fileID: 11400000, guid: 5be11cda23dcdf04689923a737977a3f, type: 2}
   m_enemies:
   - {fileID: 4228423151393138417, guid: 169a40053bd3d78469605a82642e9e40, type: 3}
   m_spawnPoints:

@@ -1,8 +1,7 @@
 using Magic.Effects;
-using Players;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
+using Magic.Effects.Extensions;
 
 namespace Magic.Spells.Projectiles
 {
@@ -54,10 +53,7 @@ namespace Magic.Spells.Projectiles
         {
             if (!m_initialized) return;
 
-            if (other.GetComponent<PlayerController>()) return;
-
-            if (other.TryGetComponent<IEffectable>(out var effectable))
-                ApplyEffects(effectable);
+            m_effects.ApplyEffects(other.GetComponents<IEffectable>());
 
             Destroy(gameObject);
         }

@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 4556626936827933947}
   - component: {fileID: 3601342876277961908}
   - component: {fileID: 4228423151393138417}
-  - component: {fileID: 2102046248562111532}
   - component: {fileID: 3879303952603260697}
+  - component: {fileID: 2102046248562111532}
+  - component: {fileID: -1584044869998503728}
+  - component: {fileID: -74973684263517636}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -130,18 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Enemies.Enemy
   m_attack: {fileID: 3879303952603260697}
   m_health: {fileID: 2102046248562111532}
---- !u!114 &2102046248562111532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2474290976464031992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d954b3f2aa306d4ba579c2c68d8e5a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Entities.HealthComponent
+  m_movement: {fileID: -1584044869998503728}
 --- !u!114 &3879303952603260697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,3 +145,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c387303bf86dad49be6f54b099b769c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Enemies.Systems.EnemyAttack
+--- !u!114 &2102046248562111532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2474290976464031992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d954b3f2aa306d4ba579c2c68d8e5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.HealthComponent
+--- !u!114 &-1584044869998503728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2474290976464031992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802a7a23b0ce8694c926cf3c842127a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.Enemies.Systems.EnemyMovement
+  m_agent: {fileID: -74973684263517636}
+--- !u!195 &-74973684263517636
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2474290976464031992}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

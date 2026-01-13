@@ -1,5 +1,4 @@
-﻿using Magic.Effects;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Magic.Effects.Extensions
 {
