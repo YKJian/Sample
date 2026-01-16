@@ -32,6 +32,8 @@ namespace Entities
             }
         }
 
+        public float maxValue { get; private set; }
+
         public void Initialize(float value)
         {
             if (m_initialized)
@@ -39,7 +41,8 @@ namespace Entities
                 throw new InvalidOperationException("Health component is already initialized");
             }
 
-            m_value = value;
+            this.value = value;
+            maxValue = value;
             m_initialized = true;
         }
 

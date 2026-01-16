@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 52834502833171652}
   - component: {fileID: 8917176285438454388}
   - component: {fileID: 4673499774127368411}
+  - component: {fileID: 8145051317807998305}
   m_Layer: 6
   m_Name: HpBar
   m_TagString: Untagged
@@ -76,6 +77,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8145051317807998305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596689586495905709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547a3f80a51ddcb4f9afc64bd116ec9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.Views.HealthBarView
+  m_bar: {fileID: 4673499774127368411}
+  m_healthComponent: {fileID: 2232873096581409377}
 --- !u!1 &1134980595682774825
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,6 +550,7 @@ GameObject:
   - component: {fileID: 8043882394595070503}
   - component: {fileID: 4220003447086285564}
   - component: {fileID: 7618980531575658573}
+  - component: {fileID: 2232873096581409377}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -686,6 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09241420c55cd6e4fbc001988e6e8b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Players.PlayerController
+  m_health: {fileID: 2232873096581409377}
   m_config: {fileID: 11400000, guid: 989191dd944b5c54d9e8fca1608a7a1e, type: 2}
   m_playerMovement: {fileID: 8043882394595070503}
   m_mouseResolver: {fileID: 0}
@@ -709,6 +726,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Magic.Systems.MagicSystem
   m_config: {fileID: 11400000, guid: 2f57b36c48a03154b81f5c250990ad59, type: 2}
   m_mouseResolver: {fileID: 0}
+--- !u!114 &2232873096581409377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4918460773131229292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d954b3f2aa306d4ba579c2c68d8e5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.HealthComponent
 --- !u!1 &6871842970577423614
 GameObject:
   m_ObjectHideFlags: 0
