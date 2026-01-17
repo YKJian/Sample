@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 547a3f80a51ddcb4f9afc64bd116ec9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Views.HealthBarView
-  m_bar: {fileID: 4673499774127368411}
+  m_bar: {fileID: 6498001267544512637}
   m_healthComponent: {fileID: 2232873096581409377}
 --- !u!1 &1134980595682774825
 GameObject:
