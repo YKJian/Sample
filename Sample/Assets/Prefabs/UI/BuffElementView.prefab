@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 1492805297126815826}
   - component: {fileID: 2430285554871082808}
   - component: {fileID: 7920933158435520731}
+  - component: {fileID: 2236717312272496998}
   m_Layer: 6
   m_Name: BuffElementView
   m_TagString: Untagged
@@ -152,6 +153,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2236717312272496998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3233898773243529338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d8e635507441d44b62ac9bca6ce0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Magic.Views.BuffElementView
+  m_timerImage: {fileID: 7794434727007207900}
+  m_iconImage: {fileID: 6397003626712477118}
 --- !u!1 &8301684313295429572
 GameObject:
   m_ObjectHideFlags: 0

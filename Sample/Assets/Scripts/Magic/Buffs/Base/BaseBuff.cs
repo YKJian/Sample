@@ -7,15 +7,23 @@ namespace Magic.Buffs.Base
     public abstract class BaseBuff : IBuff
     {
         [field: SerializeField]
-        public string Id { get; private set; }
+        public string id { get; private set; }
+
+        [field: SerializeField]
+        public Sprite icon { get; private set; }
+
+        [field: SerializeField]
+        public BuffType type { get; private set; }
 
         protected BuffContainer container { get; private set; }
 
         public BaseBuff() { }
 
-        protected BaseBuff(string id)
+        protected BaseBuff(string id, Sprite icon, BuffType type)
         {
-            Id = id;
+            this.id = id;
+            this.icon = icon;
+            this.type = type;    
         }
 
         public void Initialize(BuffContainer container)

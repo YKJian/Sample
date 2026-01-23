@@ -16,10 +16,12 @@ namespace Magic.Buffs.Impls
 
         public PoisonDebuff(
             string id,
+            Sprite icon,
+            BuffType type,
             float duration,
             float interval,
             float damagePerSeconds)
-            : base (id, duration)
+            : base (id, icon, type, duration)
         {
             m_interval = interval;
             m_damagePerSeconds = damagePerSeconds;
@@ -58,6 +60,6 @@ namespace Magic.Buffs.Impls
         }
 
         public override IBuff Clone() =>
-            new PoisonDebuff(Id, duration, m_interval, m_damagePerSeconds);
+            new PoisonDebuff(id, icon, type, duration, m_interval, m_damagePerSeconds);
     }
 }
