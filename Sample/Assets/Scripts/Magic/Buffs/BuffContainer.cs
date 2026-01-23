@@ -12,9 +12,10 @@ namespace Magic.Buffs
 
         public void Add(IBuff buff)
         {
-            if (m_buffs.TryGetValue(buff.Id, out IBuff existingBuff) )
+            if (m_buffs.TryGetValue(buff.Id, out IBuff existingBuff))
             {
                 existingBuff.Refresh(this);
+                m_ids.Remove(existingBuff.Id);
             }
             else
             {
@@ -23,7 +24,7 @@ namespace Magic.Buffs
             }
         }
 
-        public void Remove (IBuff buff)
+        public void Remove(IBuff buff)
         {
             m_ids.Add(buff.Id);
         }

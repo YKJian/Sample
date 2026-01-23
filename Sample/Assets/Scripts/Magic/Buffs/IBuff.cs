@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Magic.Buffs
+﻿namespace Magic.Buffs
 {
-    public interface IBuff: ICloneable
+    public interface IBuff
     {
         public string Id { get; }
 
@@ -11,5 +9,7 @@ namespace Magic.Buffs
         public void Deinitialize();
 
         public void Update(float deltaTime);
+
+        public IBuff Clone();
     }
 }
