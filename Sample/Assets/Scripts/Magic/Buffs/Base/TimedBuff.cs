@@ -8,10 +8,10 @@ namespace Magic.Buffs.Base
     {
         [SerializeField] private float m_duration;
 
-        protected float duration => m_duration;
+        public float duration => m_duration;
 
         [field: NonSerialized]
-        public float timer { get; private set; }
+        public float timer { get; private set; } 
 
         public TimedBuff() { }
 
@@ -35,7 +35,7 @@ namespace Magic.Buffs.Base
             if (timer > 0)
             {
                 OnUpdated(deltaTime);
-                timer += deltaTime;
+                timer -= deltaTime;
             }
             else
             {

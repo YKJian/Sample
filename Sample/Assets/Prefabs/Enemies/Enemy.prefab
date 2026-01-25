@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StatsCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4188049422054096988, guid: 6c1b6ba8822902e4e8d7fb48ce887a3b, type: 3}
+      propertyPath: m_buffContainer
+      value: 
+      objectReference: {fileID: 8199703967641366594}
     - target: {fileID: 5711140364492559055, guid: 6c1b6ba8822902e4e8d7fb48ce887a3b, type: 3}
       propertyPath: m_Color.g
       value: 0.96448636

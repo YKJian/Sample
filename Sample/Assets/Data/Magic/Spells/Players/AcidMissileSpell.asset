@@ -34,7 +34,9 @@ MonoBehaviour:
     - rid: 9142120792072913016
       type: {class: PoisonDebuff, ns: Magic.Buffs.Impls, asm: Assembly-CSharp}
       data:
-        <Id>k__BackingField: Poison
+        <id>k__BackingField: PoisonDebuff
+        <icon>k__BackingField: {fileID: 21300000, guid: db266592c233a084ea04f4aa8bc6e342, type: 3}
+        <type>k__BackingField: 1
         m_duration: 10
         m_interval: 1
         m_damagePerSeconds: 2
