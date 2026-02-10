@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4a24e6d2fc5a446a20eb724028a755, type: 3}
+  m_Name: FireballPoisonEnemySpell
+  m_EditorClassIdentifier: Assembly-CSharp::Magic.Spells.Data.TargetSpellData
+  m_spellName: Enemy Fireball Poison
+  m_visualEffect: {fileID: 1587250918974726, guid: a0fbc3331c879eb408b22e83f39d57fb, type: 3}
+  m_combination: 
+  m_effects:
+  - rid: 68476724667220034
+  - rid: 68476724667220035
+  m_speed: 7
+  references:
+    version: 2
+    RefIds:
+    - rid: 68476724667220034
+      type: {class: AttackEffect, ns: Magic.Effects, asm: Assembly-CSharp}
+      data:
+        m_damage: 25
+    - rid: 68476724667220035
+      type: {class: BuffEffect, ns: Magic.Effects, asm: Assembly-CSharp}
+      data:
+        m_buffs:
+        - rid: 68476724667220036
+    - rid: 68476724667220036
+      type: {class: PoisonDebuff, ns: Magic.Buffs.Impls, asm: Assembly-CSharp}
+      data:
+        <id>k__BackingField: Poison
+        <icon>k__BackingField: {fileID: 21300000, guid: db266592c233a084ea04f4aa8bc6e342, type: 3}
+        <type>k__BackingField: 1
+        m_duration: 5
+        m_interval: 1
+        m_damagePerSeconds: 2

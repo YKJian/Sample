@@ -53,7 +53,7 @@ namespace Entities.Enemies
             m_data = data;
             m_health.Initialize(data.health);
             m_movement.Initialize(data.speed, playerTransform);
-            m_attack.Initialize(playerTransform, data.spell, data.attackTime);
+            m_attack.Initialize(data.spells, playerTransform, data.attackTime);
 
             m_playerTransform = playerTransform;
             m_stateMachine ??= new EnemyStateMachine();
