@@ -15,6 +15,7 @@ MonoBehaviour:
   m_enemyType: 0
   m_health: 100
   m_speed: 0
+  m_defaultSpell: {fileID: 11400000, guid: 3a6f48c8182c017409fffb905636de5e, type: 2}
   m_spells:
   - count: 1
     spell: {fileID: 11400000, guid: 3a6f48c8182c017409fffb905636de5e, type: 2}

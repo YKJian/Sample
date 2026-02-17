@@ -1,7 +1,6 @@
 ﻿using Magic.Spells.Data;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using UnityEngine;
 
 namespace Entities.Enemies.Data
@@ -16,6 +15,7 @@ namespace Entities.Enemies.Data
         [SerializeField] [Range(0f, 100f)] private float m_speed;
 
         [Header("Attack")]
+        [SerializeField] private BaseSpellData m_defaultSpell;
         [SerializeField] private SpellEnemyData[] m_spells;
         [SerializeField] [Min(0)] private float m_attackTime;
         [SerializeField] [Min(0)] private float m_attackRange;
@@ -30,6 +30,8 @@ namespace Entities.Enemies.Data
         public float attackRange => m_attackRange;
 
         public AttackEnemyType enemyType => m_enemyType;
+
+        public BaseSpellData defaultSpell => m_defaultSpell;
         
         public IReadOnlyList<SpellEnemyData> spells => m_spells;
     }
