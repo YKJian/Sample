@@ -13,6 +13,11 @@ namespace Magic.Spells.Aoe
 
             foreach (var collider in colliders)
             {
+                if (collider.gameObject.layer == gameObject.layer)
+                {
+                    continue;
+                }
+
                 var effectables = collider.GetComponents<IEffectable>();
                 effects.ApplyEffects(effectables);
             }

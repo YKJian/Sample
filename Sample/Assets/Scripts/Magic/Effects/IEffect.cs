@@ -4,6 +4,4 @@ namespace Magic.Effects
     {
         public void Apply(IEffectable effectable);
     }
-
-    public interface IEffectable { }
 }

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe309e358f908549b374a9661ef4695, type: 3}
+  m_Name: AccelerationBuffSpell
+  m_EditorClassIdentifier: Assembly-CSharp::Magic.Spells.Data.SelfSpellData
+  m_spellName: Acceleration
+  m_visualEffect: {fileID: 31484308201695145, guid: b2f55d3e0dea8f84082312e0fc6e87a3, type: 3}
+  m_combination: 0100000002000000
+  m_effects:
+  - rid: 9142120859912372312
+  references:
+    version: 2
+    RefIds:
+    - rid: 9142120859912372312
+      type: {class: BuffEffect, ns: Magic.Effects, asm: Assembly-CSharp}
+      data:
+        m_buffs:
+        - rid: 9142120859912372313
+    - rid: 9142120859912372313
+      type: {class: AccelerationBuff, ns: Magic.Buffs.Impls, asm: Assembly-CSharp}
+      data:
+        <id>k__BackingField: AccelerationBuff
+        <icon>k__BackingField: {fileID: 21300000, guid: 5453e247662290f42b94a091d4fc2c99, type: 3}
+        <type>k__BackingField: 0
+        m_duration: 5
+        m_value: 1.5

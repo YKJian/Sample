@@ -1678,7 +1678,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -2142,6 +2142,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4135448906370100878, guid: 83b14e7795077fd41b11194efa8e9ac5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135448906370100878, guid: 83b14e7795077fd41b11194efa8e9ac5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135448906370100878, guid: 83b14e7795077fd41b11194efa8e9ac5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135448906370100878, guid: 83b14e7795077fd41b11194efa8e9ac5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4220003447086285564, guid: 83b14e7795077fd41b11194efa8e9ac5, type: 3}
       propertyPath: m_mouseResolver
       value: 
@@ -2149,6 +2165,22 @@ PrefabInstance:
     - target: {fileID: 4918460773131229292, guid: 83b14e7795077fd41b11194efa8e9ac5, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052449027521353678, guid: 83b14e7795077fd41b11194efa8e9ac5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052449027521353678, guid: 83b14e7795077fd41b11194efa8e9ac5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052449027521353678, guid: 83b14e7795077fd41b11194efa8e9ac5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052449027521353678, guid: 83b14e7795077fd41b11194efa8e9ac5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7618980531575658573, guid: 83b14e7795077fd41b11194efa8e9ac5, type: 3}
       propertyPath: m_mouseResolver
