@@ -271,7 +271,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Infrastructure.Bootstrap
   m_mainMenuView: {fileID: 838604107}
+  m_deadMenuView: {fileID: 1868063651}
   m_enemySpawner: {fileID: 1548031803}
+  m_playerController: {fileID: 2059554221}
 --- !u!1 &263199850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2767,8 +2769,9 @@ GameObject:
   - component: {fileID: 1868063650}
   - component: {fileID: 1868063649}
   - component: {fileID: 1868063648}
+  - component: {fileID: 1868063651}
   m_Layer: 5
-  m_Name: DeathMenuState
+  m_Name: DeadMenuState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2859,6 +2862,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868063646}
   m_CullTransparentMesh: 1
+--- !u!114 &1868063651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868063646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0175917f874ce2a4e845031988c9e231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.UI.DeadMenuView
+  m_goToMainMenuButton: {fileID: 351349140}
 --- !u!1 &1959399293
 GameObject:
   m_ObjectHideFlags: 0
@@ -3081,6 +3097,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc70e77e279e8de4091eeeb104cccfaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Players.PlayerMovement
+--- !u!114 &2059554221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4220003447086285564, guid: 83b14e7795077fd41b11194efa8e9ac5, type: 3}
+  m_PrefabInstance: {fileID: 1987992058836322254}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09241420c55cd6e4fbc001988e6e8b1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Players.PlayerController
 --- !u!1 &2125845139
 GameObject:
   m_ObjectHideFlags: 0
