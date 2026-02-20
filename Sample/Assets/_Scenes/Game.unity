@@ -236,6 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 86315611}
   - component: {fileID: 86315612}
+  - component: {fileID: 86315613}
   m_Layer: 0
   m_Name: Bootstrap
   m_TagString: Untagged
@@ -270,10 +271,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d511852b03ce14292df9ac0be51c7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Infrastructure.Bootstrap
+  m_bootStrapState: {fileID: 86315613}
   m_mainMenuView: {fileID: 838604107}
   m_deadMenuView: {fileID: 1868063651}
   m_enemySpawner: {fileID: 1548031803}
   m_playerController: {fileID: 2059554221}
+--- !u!114 &86315613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86315610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec4f933aaf99e74b97c8fa466f70ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Infrastructure.States.BootstrapState
+  m_mouseResolver: {fileID: 622036613}
 --- !u!1 &263199850
 GameObject:
   m_ObjectHideFlags: 0
