@@ -1,4 +1,5 @@
 using Entities;
+using Infrastructure;
 using Magic.Systems;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,8 +12,10 @@ namespace Players
         [SerializeField] private HealthComponent m_health;
         [SerializeField] private PlayerConfig m_config;
         [SerializeField] private PlayerMovement m_playerMovement;
-        [SerializeField] private MouseResolver m_mouseResolver;
+
         [SerializeField] private MagicInputHelper m_magicInputHelper;
+
+        private MouseResolver m_mouseResolver;
 
         private PlayerRotationCalculator m_playerRotationCalculator;
 
@@ -26,16 +29,13 @@ namespace Players
             {
                 m_playerMovement = GetComponent<PlayerMovement>();
             }
-
-            if (!m_mouseResolver)
-            {
-                m_mouseResolver = GetComponent<MouseResolver>();
-            }
         }
 
         private void Start()
         {
             var camera = Camera.main;
+
+            m_mouseResolver = ServiceLocator.Resolve<MouseResolver>();
 
             m_health.Initialize(m_config.hp);
             m_playerMovement.Initialize(m_config.speed, m_config.angularSpeed);
