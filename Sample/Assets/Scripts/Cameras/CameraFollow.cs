@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Cameras
 {
-    public class CameraFoll : MonoBehaviour
+    public class CameraFollow : MonoBehaviour
     {
         [SerializeField] private Transform m_target;
         [SerializeField] private Vector3 m_offset = new Vector3(0, 15, -10);

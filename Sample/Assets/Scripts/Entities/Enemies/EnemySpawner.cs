@@ -1,4 +1,5 @@
 ﻿using Entities.Enemies.Data;
+using Infrastructure;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,19 +10,23 @@ namespace Entities.Enemies
         [SerializeField] private EnemyData[] m_data;
         [SerializeField] private Enemy[] m_enemies;
         [SerializeField] private Transform[] m_spawnPoints;
-        [SerializeField] private Transform m_playerTransform;
 
         private List<Enemy> m_currentEnemies = new();
 
         public void Spawn()
         {
+            var playerTransform = ServiceLocator
+                .Resolve<IPlayerFactory>()
+                .Create()
+                .transform;
+
             foreach(var spawnPoint in m_spawnPoints)
             {
                 var enemy = GetEnemy();
                 var enemyData = GetEnemyData();
 
                 var enemyInstance = Instantiate(enemy, spawnPoint);
-                enemyInstance.Initialize(enemyData, m_playerTransform);
+                enemyInstance.Initialize(enemyData, playerTransform);
 
                 enemyInstance.Died += OnDied;
                 m_currentEnemies.Add(enemy);

@@ -31,11 +31,11 @@ namespace Players
             }
         }
 
-        private void Start()
+        public void Initialize(
+            Camera camera,
+            MouseResolver mouseResolver)
         {
-            var camera = Camera.main;
-
-            m_mouseResolver = ServiceLocator.Resolve<MouseResolver>();
+            m_mouseResolver = mouseResolver;
 
             m_health.Initialize(m_config.hp);
             m_playerMovement.Initialize(m_config.speed, m_config.angularSpeed);
