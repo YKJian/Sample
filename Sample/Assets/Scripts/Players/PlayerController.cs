@@ -37,6 +37,8 @@ namespace Players
         {
             m_mouseResolver = mouseResolver;
 
+            m_mouseResolver = ServiceLocator.Resolve<MouseResolver>();
+
             m_health.Initialize(m_config.hp);
             m_playerMovement.Initialize(m_config.speed, m_config.angularSpeed);
             m_playerRotationCalculator = new PlayerRotationCalculator(camera, transform);
