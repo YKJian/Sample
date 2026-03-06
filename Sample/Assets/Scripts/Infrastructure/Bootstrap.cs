@@ -2,7 +2,6 @@
 using Infrastructure.States;
 using Entities.Enemies;
 using UI;
-using Players;
 using Markers;
 using Cameras;
 
@@ -16,24 +15,27 @@ namespace Infrastructure
         [SerializeField] private AimLineMarker m_aimLineMarker;
         [SerializeField] private EnemySpawner m_enemySpawner;
         [SerializeField] private CameraFollow m_cameraFollow;
+        [SerializeField] private PauseMenuView m_pauseMenuView;
+
+        private StateMachine m_stateMachine;
 
         private void Awake()
         {
-            var stateMachine = new StateMachine();
-            m_bootStrapState.Initialize(stateMachine);
+            m_stateMachine = new StateMachine();
+            m_bootStrapState.Initialize(m_stateMachine);
 
-            stateMachine.Initialize(
+            m_stateMachine.Initialize(
                 m_bootStrapState,
-                new PauseMenuState(stateMachine), 
-                new DeadState(stateMachine, m_deadMenuView), 
+                new PauseMenuState(m_stateMachine, m_pauseMenuView), 
+                new DeadState(m_stateMachine, m_deadMenuView), 
                 new GameplayState(
-                    stateMachine,
+                    m_stateMachine,
                     m_cameraFollow,
                     m_enemySpawner, 
                     m_aimLineMarker,
                     m_targetMarkerObserver));
 
-            stateMachine.ChangeState<BootstrapState>();
+            m_stateMachine.ChangeState<BootstrapState>();
         }
     }
 }

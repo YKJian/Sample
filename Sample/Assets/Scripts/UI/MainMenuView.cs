@@ -1,18 +1,20 @@
 using Infrastructure;
-using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace UI
 {
     public class MainMenuView : MonoBehaviour
     {
-        public event Action PlayClicked;
-        public event Action ExitClicked;
-
         [SerializeField] private Button m_playButton;
         [SerializeField] private Button m_exitButton;
+
+        private Loading m_loading;
+
+        private void Start()
+        {
+            m_loading = ServiceLocator.Resolve<Loading>();
+        }
 
         private void OnEnable()
         {
@@ -28,13 +30,17 @@ namespace UI
 
         private void OnPlayClick()
         {
-            SceneManager.LoadScene(GlobalConstants.Scenes.Game);
-            PlayClicked?.Invoke();
+            m_loading.LoadScene(GlobalConstants.Scenes.Game);
         }
 
         private void OnExitClick()
         {
-            ExitClicked?.Invoke();
+            Application.Quit();
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.ExitPlaymode();
+#endif
+            Application.Quit();
+
         }
     }
 }

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using UI;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 namespace Infrastructure.States
@@ -25,6 +26,11 @@ namespace Infrastructure.States
             }
         }
 
+        public void Update()
+        {
+            m_state?.Update();
+        }
+
         public void ChangeState<T>()
             where T: IState
         {
@@ -40,21 +46,52 @@ namespace Infrastructure.States
     {
         public void Enter();
 
+        public void Update() { }
+
         public void Exit();
     }
 
     public class PauseMenuState : IState
     {
         private readonly StateMachine m_stateMachine;
+        private readonly PauseMenuView m_pauseMenuView;
+        private readonly Loading m_loading;
 
-        public PauseMenuState(StateMachine stateMachine)
+        public PauseMenuState(
+            StateMachine stateMachine,
+            PauseMenuView pauseMenuView)
         {
             m_stateMachine = stateMachine;
+            m_pauseMenuView = pauseMenuView;
+            m_loading = ServiceLocator.Resolve<Loading>();
         }
 
-        public void Enter() => throw new Exception();
+        public void Enter()
+        {
+            Time.timeScale = 0f;
+            m_pauseMenuView.gameObject.SetActive(true);
+            m_pauseMenuView.ContinueClicked += OnContinueClicked;
+            m_pauseMenuView.MainMenuClicked += OnMainMenuClicked;
+        }
 
-        public void Exit() => throw new Exception();
+        public void Exit()
+        {
+            Time.timeScale = 1f;
+            m_pauseMenuView.gameObject.SetActive(false);
+            m_pauseMenuView.ContinueClicked -= OnContinueClicked;
+            m_pauseMenuView.MainMenuClicked -= OnMainMenuClicked;
+        }
+
+        private void OnContinueClicked()
+        {
+            //ContinueClicked?.Invoke();
+        }
+
+        private void OnMainMenuClicked()
+        {
+            Exit();
+            SceneManager.LoadScene(GlobalConstants.Scenes.Main);
+        }
     }
 
     public class GameplayState : IState
@@ -93,6 +130,13 @@ namespace Infrastructure.States
 
             m_enemySpawner.Spawn();
             m_playerController.health.Died += OnDied;
+        }
+        public void Update()
+        {
+            if (Keyboard.current[Key.Escape].wasPressedThisFrame)
+            {
+                m_stateMachine.ChangeState<PauseMenuState>();
+            }
         }
 
         public void Exit()
