@@ -30,6 +30,7 @@ namespace UI
 
         private void OnPlayClick()
         {
+            gameObject.SetActive(false);
             m_loading.LoadScene(GlobalConstants.Scenes.Game);
         }
 

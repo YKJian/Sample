@@ -29,7 +29,7 @@ namespace Entities.Enemies
                 enemyInstance.Initialize(enemyData, playerTransform);
 
                 enemyInstance.Died += OnDied;
-                m_currentEnemies.Add(enemy);
+                m_currentEnemies.Add(enemyInstance);
             }
         }
 
