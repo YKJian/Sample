@@ -38,5 +38,11 @@ namespace Infrastructure
 
             m_stateMachine.ChangeState<BootstrapState>();
         }
+
+        // not sure where it's supposed to be
+        private void Update()
+        {
+            m_stateMachine.Update();
+        }
     }
 }

@@ -6,8 +6,8 @@ namespace Infrastructure.States
     {
         public void Enter()
         {
-            var loading = ServiceLocator.Resolve<Loading>();
-            var spawner = ServiceLocator.Resolve<EnemySpawner>();
+            Loading loading = ServiceLocator.Resolve<Loading>();
+            EnemySpawner spawner = ServiceLocator.Resolve<EnemySpawner>();
             spawner.DespawnAll();
 
             loading.LoadScene(GlobalConstants.Scenes.Main);

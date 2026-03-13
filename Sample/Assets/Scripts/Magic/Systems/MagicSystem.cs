@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Magic.Spells.Data;
+using Infrastructure;
 
 namespace Magic.Systems
 {
@@ -20,8 +21,8 @@ namespace Magic.Systems
         }
 
         [SerializeField] private MagicConfig m_config;
-        [SerializeField] private MouseResolver m_mouseResolver;
-
+        
+        private MouseResolver m_mouseResolver;
         private MagicState m_state;
         private SpellCaster m_caster;
         private Coroutine m_cooldownCoroutine;
@@ -52,6 +53,12 @@ namespace Magic.Systems
         {
             spellPreparation.OverflowOccured += CancelSpell;
         }
+
+        private void Start()
+        {
+            m_mouseResolver = ServiceLocator.Resolve<MouseResolver>();
+        }
+
         private void OnDisable()
         {
             spellPreparation.OverflowOccured -= CancelSpell;

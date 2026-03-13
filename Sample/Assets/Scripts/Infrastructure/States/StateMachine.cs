@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Infrastructure.States
 {
@@ -26,11 +27,11 @@ namespace Infrastructure.States
         public void ChangeState<T>()
             where T: IState
         {
+            Debug.Log("Changed state: current " + m_state);
             m_state?.Exit();
-            {
-                m_state = m_states[typeof(T)];
-            }
+            m_state = m_states[typeof(T)];
             m_state.Enter();
+            Debug.Log("Changed state: switched " + m_state);
         }
     }
 }

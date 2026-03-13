@@ -25,7 +25,7 @@ namespace Infrastructure.States
 
             ServiceLocator.Register<PlayerSpawnPoint>(m_playerSpawnPoint);
 
-            m_stateMachine.ChangeState<GameplayState>();
+            m_stateMachine.ChangeState<GameplayEntryState>();
         }
 
         public void Exit()

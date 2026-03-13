@@ -35,7 +35,7 @@ namespace Infrastructure.States
             m_targetMarkerObserver.Initialize(m_playerController.GetComponent<PlayerMovement>());
 
             m_enemySpawner.Spawn();
-            m_stateMachine.ChangeState<GameplayEntryState>();
+            m_stateMachine.ChangeState<GameplayState>();
         }
 
         public void Exit()
