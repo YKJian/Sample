@@ -1,9 +1,6 @@
-﻿using Infrastructure.States;
-using UI;
-using UnityEngine.InputSystem.iOS;
-using UnityEngine.SceneManagement;
+﻿using UI;
 
-namespace Infrastructure
+namespace Infrastructure.States
 {
     public class DeadState : IState
     {

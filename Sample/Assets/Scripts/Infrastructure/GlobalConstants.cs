@@ -1,7 +1,4 @@
-﻿using UnityEditor;
-using UnityEngine;
-
-namespace Infrastructure
+﻿namespace Infrastructure
 {
     public static class GlobalConstants 
     {

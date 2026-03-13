@@ -1,8 +1,7 @@
-﻿using Infrastructure.States;
-using UI;
+﻿using UI;
 using UnityEngine;
 
-namespace Infrastructure
+namespace Infrastructure.States
 {
     public class PauseMenuState : IState
     {

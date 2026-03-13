@@ -41,7 +41,8 @@ namespace Infrastructure
                 m_playerPrefab = playerPrefab.GetComponent<PlayerController>(); 
             }
 
-            m_playerInstance = Object.Instantiate(m_playerPrefab, 
+            m_playerInstance = Object.Instantiate(
+                m_playerPrefab, 
                 ((IPlayerFactorySettings)this).position, 
                 Quaternion.identity);
             m_playerInstance.Initialize(Camera.main, ServiceLocator.Resolve<MouseResolver>());

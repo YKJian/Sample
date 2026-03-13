@@ -1,11 +1,8 @@
 ﻿using Cameras;
-using Entities.Enemies;
-using Infrastructure.States;
-using Markers;
 using Players;
 using UnityEngine.InputSystem;
 
-namespace Infrastructure
+namespace Infrastructure.States
 {
     public class GameplayState : IState
     {
