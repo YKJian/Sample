@@ -348,7 +348,6 @@ MonoBehaviour:
   m_health: {fileID: 2232873096581409377}
   m_config: {fileID: 11400000, guid: 989191dd944b5c54d9e8fca1608a7a1e, type: 2}
   m_playerMovement: {fileID: 8043882394595070503}
-  m_mouseResolver: {fileID: 0}
   m_magicInputHelper:
     m_magicSystem: {fileID: 7618980531575658573}
     m_element1Key: 31

@@ -9,7 +9,6 @@ namespace Infrastructure
     {
         [SerializeField] private Image m_loading;
 
-        private string _sceneName;
         private static Loading m_instance;
 
         private void Awake()

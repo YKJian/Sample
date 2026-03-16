@@ -23,7 +23,7 @@ namespace Infrastructure.States
             ServiceLocator.Register<IPlayerFactory>(playerFactory);
             ServiceLocator.Register<IPlayerFactorySettings>(playerFactory);
 
-            ServiceLocator.Register<PlayerSpawnPoint>(m_playerSpawnPoint);
+            ServiceLocator.Register(m_playerSpawnPoint);
 
             m_stateMachine.ChangeState<GameplayEntryState>();
         }

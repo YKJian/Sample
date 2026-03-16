@@ -29,7 +29,7 @@ namespace Infrastructure
                 new PauseMenuState(m_stateMachine, m_pauseMenuView), 
                 new DeadState(m_stateMachine, m_deadMenuView), 
                 new GameplayState(m_stateMachine, m_cameraFollow),
-                new GameplayExitState(),
+                new GameplayExitState(m_enemySpawner),
                 new GameplayEntryState(
                     m_stateMachine,
                     m_enemySpawner, 
@@ -39,7 +39,6 @@ namespace Infrastructure
             m_stateMachine.ChangeState<BootstrapState>();
         }
 
-        // not sure where it's supposed to be
         private void Update()
         {
             m_stateMachine.Update();
